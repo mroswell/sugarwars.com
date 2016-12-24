@@ -145,11 +145,11 @@ h1 sub
 	-ms-transform-origin: 50% 100%;
 	-o-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
-	-webkit-transform: perspective(300px) rotateX(25deg);
-	-moz-transform: perspective(300px) rotateX(25deg);
-	-ms-transform: perspective(300px) rotateX(25deg);
-	-o-transform: perspective(300px) rotateX(25deg);
-	transform: perspective(300px) rotateX(25deg);
+	-webkit-transform: perspective(300px) rotateX(23deg);
+	-moz-transform: perspective(300px) rotateX(23deg);
+	-ms-transform: perspective(300px) rotateX(23deg);
+	-o-transform: perspective(300px) rotateX(23deg);
+	transform: perspective(300px) rotateX(23deg);
 }
 
 #titles:after
@@ -199,25 +199,25 @@ h1 sub
 /* animation */
 @-webkit-keyframes scroll {
 	0% { top: 100%; }
-	100% { top: -170%; }
+	100% { top: -1500%; }
 }
 
 @-moz-keyframes scroll {
 	0% { top: 100%; }
-	100% { top: -170%; }
+	100% { top: -1500%; }
 }
 
 @-ms-keyframes scroll {
 	0% { top: 100%; }
-	100% { top: -170%; }
+	100% { top: -1500%; }
 }
 
 @-o-keyframes scroll {
 	0% { top: 100%; }
-	100% { top: -170%; }
+	100% { top: -1500%; }
 }
 
 @keyframes scroll {
 	0% { top: 100%; }
-	100% { top: -170%; }
+	100% { top: -1500%; }
 }
