@@ -9,7 +9,8 @@
 @import url(//fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 * { padding: 0; margin: 0; }
-
+button.ytp-play-button {margin-top:100px; }
+/*#ytpc_ytcontrol_button:hover {opacity:1;}*/
 body, html
 {
   width: 100%;
@@ -189,11 +190,11 @@ h1 sub
 {
 	position: absolute;
 	top: 100%;
-	-webkit-animation: scroll 360s linear 4s infinite;
-	-moz-animation: scroll 360s linear 4s infinite;
-	-ms-animation: scroll 360s linear 4s infinite;
-	-o-animation: scroll 360s linear 4s infinite;
-	animation: scroll 360s linear 4s infinite;
+	-webkit-animation: scroll 420s linear 4s infinite;
+	-moz-animation: scroll 420s linear 4s infinite;
+	-ms-animation: scroll 420s linear 4s infinite;
+	-o-animation: scroll 420s linear 4s infinite;
+	animation: scroll 420s linear 4s infinite;
 }
 
 /* animation */
