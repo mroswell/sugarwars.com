@@ -172,7 +172,7 @@ h1 sub
 #titles p, #titles li
 {
 	text-align: justify;
-	margin: 0.8em 0;
+	margin: 0.8em 1.7em;
 }
 
 #titles p.center
@@ -223,8 +223,4 @@ h1 sub
 	100% { top: -1500%; }
 }
 
-li,ol {
-  display: list-item;
-  list-style-position: inside;
-	    list-style-type: decimal;
-}
+
