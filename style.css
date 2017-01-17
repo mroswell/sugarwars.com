@@ -224,3 +224,8 @@ h1 sub
 }
 
 
+li,ol {
+   display: list-item;
+   list-style-position: inside;
+  list-style-type: decimal;
+ }
