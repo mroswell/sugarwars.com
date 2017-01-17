@@ -224,8 +224,7 @@ h1 sub
 }
 
 
-li,ol {
-   display: list-item;
+li {
    list-style-position: outside;
   list-style-type: decimal;
  }
