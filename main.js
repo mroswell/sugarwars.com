@@ -624,4 +624,13 @@ var DATA_JSON = {
     "issue": "",
     "pages": "107"
   }
+},
+  "S0005789488800273": {
+    "title": "Prevalence, presenting symptoms, and psychological characteristics of individuals experiencing a diet-related mood-disturbance",
+    "author": "Krietsch K",
+    "source": "Behavior Therapy",
+    "pubdate": "1987 Dec",
+    "volume": "19",
+    "issue": "4",
+    "pages": "593–604"
 };
