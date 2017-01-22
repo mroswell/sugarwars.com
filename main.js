@@ -625,6 +625,15 @@ var DATA_JSON = {
     "pages": "107"
   }
 },
+  "NCJ 092810": {
+    "title": "Los Angeles Probation Department Diet - Behavior Program - An Empirical Analysis of Six Institutional Settings",
+    "author": "Schoenthaler SJ",
+    "source": "International Journal of Biosocial Research",
+    "pubdate": "1983",
+    "volume": "5",
+    "issue": "1",
+    "pages": "88-98"
+},
   "S0005789488800273": {
     "title": "Prevalence, presenting symptoms, and psychological characteristics of individuals experiencing a diet-related mood-disturbance",
     "author": "Krietsch K",
