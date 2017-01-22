@@ -4,107 +4,114 @@
 Sugar Wars
 </title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./main.js"></script>
   <link href="style.css" rel="stylesheet">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <meta property="og:url" content="http://sugarwars.com" />
   <meta property="og:title" content="Sugar Wars" />
   <meta property="og:description" content="It is a period of refined sugar..." />
   <meta property="og:image" content="http://sugarwars.com/sugar-cube.jpg" />
 </head>
 <body>
-<!-- ALL CREDIT FOR THE SCROLLING TEXT GOES TO
-     Craig Buckler
-     http://www.sitepoint.com/css3-starwars-scrolling-text/
-
-Credit to Scott Bram the music via embedded video bit
-
+<!-- 
 15 of these descriptions come from: https://nancyappleton.com/141-reasons-sugar-ruins-your-health/
 -->
-
-
-
-<div style="overflow:hidden; position:absolute; left:0; top:0; width:50px; height:25px;">
-  <div style="margin-top:-290px;">
-    <object width="420" height="315">
-      <param name="movie" value="//www.youtube.com/v/EjMNNpIksaI?version=3&amp;hl=en_US&autoplay=1&amp;autohide=2"></param>
-      <!--<param name="movie" value="//www.youtube.com/watch?v=_D0ZQPqeJkk?version=3&amp;hl=en_US&autoplay=1&amp;autohide=2"></param>-->
-      <param name="allowFullScreen" value="true"></param>
-      <param name="allowscriptaccess" value="always"></param>
-      <embed src="//www.youtube.com/v/EjMNNpIksaI?version=3&amp;hl=en_US&autoplay=1&amp;autohide=2" type="application/x-shockwave-flash" width="420" height="315" allowscriptaccess="always" allowfullscreen="true"></embed>
-    </object>
-  </div>
-</div>
+<div id="video-placeholder" style="display:none"></div>
 
 <p id="start">A short time ago in a society not far&nbsp;away&hellip;</p>
 
-<h1>SUGAR WARS</h1>
+<h1 class="logo-text">SUGAR WARS</h1>
 
 <div id="titles">
   <div id="titlecontent">
-
     <p class="center">EPISODE MMXVII<br /></p>
-
     <p>It is a period of refined sugar. Rebel agents share conclusions drawn from research, with hopes of saving the people, and restoring health freedom to the galaxy.</p>
-    <ol><li data-pmid="14522753" class="S1">Sugar demineralizes teeth.</li>
-<li data-pmid="12792139" class="S1">Sugar can cause cataracts. (Pig&nbsp;study)</li>
-<li data-pmid="12588090" class="S1">Sugar is strongly associated with localized breast cancer in young women.</li>
-<li data-pmid="12115553" class="S1">Sugar consumption is associated with increased laryngeal cancer.</li>
-<li data-pmid="12088740" class="S1">Sugar reduces learning capacity. (Rat&nbsp;study)</li>
-<li data-pmid="10946914" class="S2">Sugar can increase reactive oxygen species (ROS), which can damage cells and tissues.</li>
-<li data-pmid="10877198" class="S1">Sugar can raise homocysteine levels in the bloodstream. (Rat&nbsp;study)</li>
-<li data-pmid="10584057" class="S1">Consumption of refined cereals is associated with an increased risk of cancers of the thyroid, colon, rectum, and stomach.</li>
-<li data-pmid="26474970" class="S1">Sugary soda nearly doubles the risk of chronic bronchitis in adults.</li>
-<li data-pmid="26261186" class="S2">Sugar has a pivotal role in tooth decay.</li>
-<li data-pmid="22890489" class="S1">High Sugar-sweetened beverage consumption raises serum uric acid, increasing the risk of gout.</li>
-<li data-pmid="22492378" class="S1">Sugar-sweetened and low-calorie sodas are associated with a significantly higher risk of stroke.</li>
-<li data-pmid="22205311" class="S1">Sucrose-sweetened soda increases ectopic fat accumulation and lipids. </li>
-<li data-pmid="21800086" class="S1">Sugar-sweetened beverages increased the risk of diabetes and heart disease. (Rat study)</li>
-<li data-pmid="20702604" class="S1">Sugar-sweetened soda consumption is associated with high waist circumference, high LDL cholesterol, high triglycerides, and hypertension</li>
-<li data-pmid="20620757" class="S1">Sugar accelerates production of advanced glycation end products or "AGEs."</li>
-<li data-pmid="20138901" class="S1">Sugar sweetened beverages can lead to weight gain.</li>
-<li data-pmid="20048020" class="S1">Foods high in sugar and processed food are associated with a higher likelihood of depression and anxiety.</li>
-<li data-pmid="19765850" class="S1">Soft drink consumption is a strong predictor of fatty liver.</li>
-<li data-pmid="19500683" class="S1">A high fructose diet impairs spatial memory. (Rodent study)</li>
-<li data-pmid="19381015" class="S1">Fructose-sweetened beverages increase visceral adiposity.</li>
-<li data-pmid="19198870" class="S1">Increased serum fructose concentration may be a predictor for cataracts.</li>
-<li data-pmid="19099241" class="S1">Maternal "junk food" diet during pregnancy and lactation can reduce muscle force in offspring. (Rat study)</li>
-<li data-pmid="17616779" class="S1">A high dietary glycemic index is associated with a reduced progression to advanced Age-Related Macular Degeneration.</li>
-<li data-pmid="16087988" class="S1">Sugar-sweetened foods and drinks increased inflammatory markers haptoglobin and transferrin.</li>
-<li data-pmid="16087988" class="S2">Sugar can increase inflammatory markers in the bloodstreams of overweight people.</li>
-<li data-pmid="15447918" class="S1">Sugar is associated with higher rates of chronic bronchitis in adults.</li>
-<li data-pmid="15447888" class="S1">Sweetened beverage consumption is associated with metabolic syndrome.</li>
-<li data-pmid="15328324" class="S1">Sugar-sweetened beverages have been associated with risk of diabetes among women.</li>
-<li data-pmid="15328324" class="S1">Sugar-sweetened beverages promote weight gain.</li>
-<li data-pmid="15123503" class="S1">Sugar is associated with prevalence of depression.</li>
-<li data-pmid="15123503" class="S2">Sugar is associated with a worse outcome of schizophrenia.</li>
-<li data-pmid="14594784" class="S1">Sugar consumption by pregnant women is associated with a two-to-four-fold increase in neural tube defects in their babies.</li>
-<li data-pmid="10389747" class="S2">Sugar is a risk factor in small intestine cancer.</li>
-<li data-pmid="10049982" class="S2">Sugar promotes excessive food intake in obese people.</li>
-<li data-pmid="9770725" class="S1">High sucrose intake could be an important risk factor in lung carcinogenesis.</li>
-<li data-pmid="9426688" class="S2">Sugar can cause cancer of the rectum.</li>
-<li data-pmid="9187625" class="S2">Sugar increases the risk of pregnant adolescents delivering a small-for-gestational-age (SGA) infant.</li>
-<li data-pmid="8505175" class="S1">Sugar consumption more than doubles the risk of biliary tract cancer.</li>
-<li data-pmid="8505175" class="S1">Sugar may be a risk factor for biliary tract cancer.</li>
-<li data-pmid="8123778" class="S1">Sugar is a risk factor for colon cancer.</li>
-<li data-pmid="7866810" class="S1">Carbohydrate consumption is significantly higher in Irritable Bowel Disease patients than in healthy controls.</li>
-<li data-pmid="7489774" class="S2">Sugar increases the risk of gastric cancer.</li>
-<li data-pmid="7437813" class="S1">Sugar can produce pathological changes in the kidney. (Rat study)</li>
-<li data-pmid="6424754" class="S1">Sugars are associated with an increased risk of gallstones.</li>
-<li data-pmid="3782627" class="S2">Sugar can cause hyperactivity, anxiety, inability to concentrate and crankiness in children.</li>
-<li data-pmid="3713513" class="S2">Sugar can lead to chromium deficiency.</li>
-<li data-pmid="3313140" class="S2">Sugar can lead to the formation of kidney stones.</li>
-<li data-pmid="3313137" class="S1">Sugar increases N-acetyl-glycosaminidase, an enzyme marker for kidney damage.</li>
-<li data-pmid="3214134" class="S2">Sugar slows food’s travel time through the gastrointestinal tract.</li>
-<li data-pmid="3214134" class="S2">Sugar increases estradiol (the most potent form of naturally occurring estrogen) in men.</li>
-<li data-pmid="NCJ 092810" class="S1">Incidents of antisocial behavior were reduced after an intervention of reduced dietary sugar.</li>
-<li data-pmid="87628" class="S1">Cane sugar can trigger migraines.</li>
-<li data-pmid="S0005789488800273" class="S2">Sugar can cause fatigue, moodiness, nervousness, and depression.</li>
-<li data-pmid="8605001" class="S1">Glucose promotes free radical production, inducing cellular abnormalities.</li>
-  </ol>
+    <ol class="sugar-wars-list">
+      <li data-pmid="14522753" class="S1">Sugar demineralizes teeth.</li>
+      <li data-pmid="12792139" class="S1">Sugar can cause cataracts. (Pig&nbsp;study)</li>
+      <li data-pmid="12588090" class="S1">Sugar is strongly associated with localized breast cancer in young women.</li>
+      <li data-pmid="12115553" class="S1">Sugar consumption is associated with increased laryngeal cancer.</li>
+      <li data-pmid="12088740" class="S1">Sugar reduces learning capacity. (Rat&nbsp;study)</li>
+      <li data-pmid="10946914" class="S2">Sugar can increase reactive oxygen species (ROS), which can damage cells and tissues.</li>
+      <li data-pmid="10877198" class="S1">Sugar can raise homocysteine levels in the bloodstream. (Rat&nbsp;study)</li>
+      <li data-pmid="10584057" class="S1">Consumption of refined cereals is associated with an increased risk of cancers of the thyroid, colon, rectum, and stomach.</li>
+      <li data-pmid="26474970" class="S1">Sugary soda nearly doubles the risk of chronic bronchitis in adults.</li>
+      <li data-pmid="26261186" class="S2">Sugar has a pivotal role in tooth decay.</li>
+      <li data-pmid="22890489" class="S1">High Sugar-sweetened beverage consumption raises serum uric acid, increasing the risk of gout.</li>
+      <li data-pmid="22492378" class="S1">Sugar-sweetened and low-calorie sodas are associated with a significantly higher risk of stroke.</li>
+      <li data-pmid="22205311" class="S1">Sucrose-sweetened soda increases ectopic fat accumulation and lipids. </li>
+      <li data-pmid="21800086" class="S1">Sugar-sweetened beverages increased the risk of diabetes and heart disease. (Rat study)</li>
+      <li data-pmid="20702604" class="S1">Sugar-sweetened soda consumption is associated with high waist circumference, high LDL cholesterol, high triglycerides, and hypertension</li>
+      <li data-pmid="20620757" class="S1">Sugar accelerates production of advanced glycation end products or "AGEs."</li>
+      <li data-pmid="20138901" class="S1">Sugar sweetened beverages can lead to weight gain.</li>
+      <li data-pmid="20048020" class="S1">Foods high in sugar and processed food are associated with a higher likelihood of depression and anxiety.</li>
+      <li data-pmid="19765850" class="S1">Soft drink consumption is a strong predictor of fatty liver.</li>
+      <li data-pmid="19500683" class="S1">A high fructose diet impairs spatial memory. (Rodent study)</li>
+      <li data-pmid="19381015" class="S1">Fructose-sweetened beverages increase visceral adiposity.</li>
+      <li data-pmid="19198870" class="S1">Increased serum fructose concentration may be a predictor for cataracts.</li>
+      <li data-pmid="19099241" class="S1">Maternal "junk food" diet during pregnancy and lactation can reduce muscle force in offspring. (Rat study)</li>
+      <li data-pmid="17616779" class="S1">A high dietary glycemic index is associated with a reduced progression to advanced Age-Related Macular Degeneration.</li>
+      <li data-pmid="16087988" class="S1">Sugar-sweetened foods and drinks increased inflammatory markers haptoglobin and transferrin.</li>
+      <li data-pmid="16087988" class="S2">Sugar can increase inflammatory markers in the bloodstreams of overweight people.</li>
+      <li data-pmid="15447918" class="S1">Sugar is associated with higher rates of chronic bronchitis in adults.</li>
+      <li data-pmid="15447888" class="S1">Sweetened beverage consumption is associated with metabolic syndrome.</li>
+      <li data-pmid="15328324" class="S1">Sugar-sweetened beverages have been associated with risk of diabetes among women.</li>
+      <li data-pmid="15328324" class="S1">Sugar-sweetened beverages promote weight gain.</li>
+      <li data-pmid="15123503" class="S1">Sugar is associated with prevalence of depression.</li>
+      <li data-pmid="15123503" class="S2">Sugar is associated with a worse outcome of schizophrenia.</li>
+      <li data-pmid="14594784" class="S1">Sugar consumption by pregnant women is associated with a two-to-four-fold increase in neural tube defects in their babies.</li>
+      <li data-pmid="10389747" class="S2">Sugar is a risk factor in small intestine cancer.</li>
+      <li data-pmid="10049982" class="S2">Sugar promotes excessive food intake in obese people.</li>
+      <li data-pmid="9770725" class="S1">High sucrose intake could be an important risk factor in lung carcinogenesis.</li>
+      <li data-pmid="9426688" class="S2">Sugar can cause cancer of the rectum.</li>
+      <li data-pmid="9187625" class="S2">Sugar increases the risk of pregnant adolescents delivering a small-for-gestational-age (SGA) infant.</li>
+      <li data-pmid="8505175" class="S1">Sugar consumption more than doubles the risk of biliary tract cancer.</li>
+      <li data-pmid="8505175" class="S1">Sugar may be a risk factor for biliary tract cancer.</li>
+      <li data-pmid="8123778" class="S1">Sugar is a risk factor for colon cancer.</li>
+      <li data-pmid="7866810" class="S1">Carbohydrate consumption is significantly higher in Irritable Bowel Disease patients than in healthy controls.</li>
+      <li data-pmid="7489774" class="S2">Sugar increases the risk of gastric cancer.</li>
+      <li data-pmid="7437813" class="S1">Sugar can produce pathological changes in the kidney. (Rat study)</li>
+      <li data-pmid="6424754" class="S1">Sugars are associated with an increased risk of gallstones.</li>
+      <li data-pmid="3782627" class="S2">Sugar can cause hyperactivity, anxiety, inability to concentrate and crankiness in children.</li>
+      <li data-pmid="3713513" class="S2">Sugar can lead to chromium deficiency.</li>
+      <li data-pmid="3313140" class="S2">Sugar can lead to the formation of kidney stones.</li>
+      <li data-pmid="3313137" class="S1">Sugar increases N-acetyl-glycosaminidase, an enzyme marker for kidney damage.</li>
+      <li data-pmid="3214134" class="S2">Sugar slows food’s travel time through the gastrointestinal tract.</li>
+      <li data-pmid="3214134" class="S2">Sugar increases estradiol (the most potent form of naturally occurring estrogen) in men.</li>
+      <li data-pmid="NCJ 092810" class="S1">Incidents of antisocial behavior were reduced after an intervention of reduced dietary sugar.</li>
+      <li data-pmid="87628" class="S1">Cane sugar can trigger migraines.</li>
+      <li data-pmid="S0005789488800273" class="S2">Sugar can cause fatigue, moodiness, nervousness, and depression.</li>
+      <li data-pmid="8605001" class="S1">Glucose promotes free radical production, inducing cellular abnormalities.</li>
+    </ol>
   </div>
+</div>
+
+<div class="settings-wrapper">
+  <div class="settings">Speed</div>
+  <div class="callout">
+    <div class="sub-heading">Scroll speed</div>
+    <div>
+      <button class="speed-control" id="plus">–</button><input type="text" class="scroll-speed" readonly="" /><button id="minus" class="speed-control">+</button>
+    </div>
+    <br/>
+    <div class="sub-heading">On mouse hover</div>
+    <input type="radio" name="radioDark" id="slow" class="css-checkbox" value="slow"/><label for="slow" class="css-label radGroup2">Slow</label>
+    <input type="radio" name="radioDark" id="stop" class="css-checkbox" value="stop"/><label for="stop" class="css-label radGroup2">Stop</label>
+  </div>
+</div>
+
+<div style="position:absolute; right:7px; top:56px;">
+  <button id="play" onClick="play()"></button>
+  <button id="pause" onClick="pause()"></button>
+  <span class="sound" onClick="pausePlay()">Sound</span>
+</div>
+
+<div class="info">
+  <span class="info-close" title="close">X</span>
+  <div class="msg"></div>
 </div>
 
 </body>
