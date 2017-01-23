@@ -275,7 +275,7 @@ var DATA_JSON = {
   },
   "7489774": {
     "title": "A case-control study of gastric cancer and nutritional factors in Marseille, France.",
-    "author": "Cornée J",
+    "author": "CornÃ©e J",
     "source": "Eur J Epidemiol",
     "pubdate": "1995 Feb",
     "volume": "11",
@@ -473,7 +473,7 @@ var DATA_JSON = {
   },
   "16087988": {
     "title": "Effect of sucrose on inflammatory markers in overweight humans.",
-    "author": "Sørensen LB",
+    "author": "SÃ¸rensen LB",
     "source": "Am J Clin Nutr",
     "pubdate": "2005 Aug",
     "volume": "82",
@@ -623,8 +623,7 @@ var DATA_JSON = {
     "volume": "14",
     "issue": "",
     "pages": "107"
-  }
-},
+  },
   "NCJ 092810": {
     "title": "Los Angeles Probation Department Diet - Behavior Program - An Empirical Analysis of Six Institutional Settings",
     "author": "Schoenthaler SJ",
@@ -633,7 +632,7 @@ var DATA_JSON = {
     "volume": "5",
     "issue": "1",
     "pages": "88-98"
-},
+  },
   "S0005789488800273": {
     "title": "Prevalence, presenting symptoms, and psychological characteristics of individuals experiencing a diet-related mood-disturbance",
     "author": "Krietsch K",
@@ -641,5 +640,6 @@ var DATA_JSON = {
     "pubdate": "1987 Dec",
     "volume": "19",
     "issue": "4",
-    "pages": "593–604"
+    "pages": "593â€“604"
+  }
 };
