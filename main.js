@@ -64,10 +64,22 @@ $(document).ready(function(){
 		}
 	});
 
-	$("body").click(function(event){
-		if($(event.target).attr("class")!="settings" && $(event.target).parents(".callout").size()==0 && $(event.target).attr("class")!="callout"){
-			$(".callout").hide();
+	$(".about").click(function(){
+		if($(".callout-about").is(":visible")){
+			$(".callout-about").hide();
+		}else{
+			$(".callout-about").show();
 		}
+	});
+
+	$("body").click(function(event){
+        if($(event.target).attr("class")!="settings" && $(event.target).parents(".callout").size()==0 && $(event.target).attr("class")!="callout"){
+            $(".callout").hide();
+        }
+
+        if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
+            $(".callout-about").hide();
+        }
 	});
 
 	$(".speed-control#minus").click(function(){

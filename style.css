@@ -296,6 +296,29 @@ li {
 	transform: rotate(-27deg);
 }
 
+.about {
+	background-image: url("img/info-circle_20_bcbcbc.png");
+	background-repeat: no-repeat;
+	color: #d0d0d0;
+	padding:4px;
+	width: 20px;
+	height: 20px;
+}
+.about a {
+
+	cursor: pointer;
+	font-weight: 400;
+	font-size: 12px;
+	padding-left: 24px;
+	color: #d0d0d0;
+}
+
+.about-wrapper{
+	z-index: 9999;
+	position: absolute;
+	right: 39px;
+	top: 88px;
+}
 
 .settings{
 	width: 20px;
