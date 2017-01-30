@@ -64,7 +64,14 @@ $(document).ready(function(){
 		}
 	});
 
-	$(".about").click(function(){
+	$(".about ").click(function(){
+		if($(".callout-about").is(":visible")){
+			$(".callout-about").hide();
+		}else{
+			$(".callout-about").show();
+		}
+	});
+	$(".image ").click(function(){
 		if($(".callout-about").is(":visible")){
 			$(".callout-about").hide();
 		}else{
@@ -80,6 +87,7 @@ $(document).ready(function(){
         if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
             $(".callout-about").hide();
         }
+
 	});
 
 	$(".speed-control#minus").click(function(){
@@ -122,7 +130,7 @@ $(document).ready(function(){
 	$("#titles li").mouseover(function(){
 		//var pubMedId = "14522753";
 		var pubMedId = $(this).attr("data-pmid");
-debugger;
+// debugger;
 		var url, linkText;
 
 		switch(pubMedId){
@@ -144,7 +152,7 @@ debugger;
 		$(".info")
 		.show()
 		.find(".msg")
-		.html(ref.author+". ("+ref.pubdate+"). "+ref.title+". "+ref.source+", "+ref.volume+"("+ref.issue+"), "+ref.pages+"<br/><a target='_blank' href='"+url+"'>"+linkText+"</a>");
+		.html(ref.author+". ("+ref.pubdate+"). "+ref.title+" "+ref.source+", "+ref.volume+"("+ref.issue+"), "+ref.pages+"<br/><a target='_blank' href='"+url+"'>"+linkText+"</a>");
 		$("#titles li").css("border","2px solid black");
 		$(this).css("border","2px solid #ffff66");
 	});

@@ -246,6 +246,20 @@ li {
 	color: black;
 }
 
+.callout-about{
+	display: inline-block;
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	padding: 20px;
+	background-color: rgb(255,255,103);
+	top: 30px;
+	right: 59px;
+	display: none;
+	color: black;
+	/*overflow: auto;*/
+}
+
 
 .scroll-speed{
 	width: 37px;
@@ -257,7 +271,7 @@ li {
 }
 
 
-.callout .sub-heading{
+.callout .sub-heading {
 	font-size: 13px;
 	font-weight: bold;
 	margin-bottom: 5px;
@@ -265,7 +279,7 @@ li {
 
 
 .callout .speed-control{
-	margin: 0px 10px;
+	margin: 0 10px;
 	font-size: 20px;
 	cursor: pointer;
 	background: none;
@@ -279,7 +293,7 @@ li {
 
 
 .callout .speed-control:first-of-type{
-	margin-left: 0px;
+	margin-left: 0;
 }
 
 
@@ -296,13 +310,37 @@ li {
 	transform: rotate(-27deg);
 }
 
+
 .about {
-	background-image: url("img/info-circle_20_bcbcbc.png");
-	background-repeat: no-repeat;
+	/*background-image: url("img/info-circle_20_bcbcbc.png");*/
+	/*background-repeat: no-repeat;*/
 	color: #d0d0d0;
 	padding:4px;
-	width: 20px;
+	/*width: 20px;*/
 	height: 20px;
+	/*line-height: 150px;*/
+	font-weight: 400;
+	font-size: 12px;
+	cursor: pointer;
+
+}
+
+.callout-about:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	right: -35px;
+	top: 20px;
+	border: 10px solid transparent;
+	border-left: 32px solid rgb(255, 255, 103);;
+	z-index: 2;
+	transform: rotate(-27deg);
+}
+
+img {
+	vertical-align: middle;
+	margin-bottom:0.25em
 }
 .about a {
 
@@ -316,7 +354,7 @@ li {
 .about-wrapper{
 	z-index: 9999;
 	position: absolute;
-	right: 39px;
+	right: 7px;
 	top: 88px;
 }
 
@@ -435,4 +473,10 @@ label.css-label {
 
 #pause{
 	background-image: url("./img/sound-off.png");
+}
+
+#about-text p {
+	font-family: 'PT Serif', serif;
+	line-height: 125%;
+	margin-bottom: 1em;
 }
