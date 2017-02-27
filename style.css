@@ -486,6 +486,9 @@ label.css-label {
 	background-color: transparent;
 	cursor: pointer;
 	outline: none;
+	vertical-align: top;
+	position: relative;
+	top: -3px;
 }
 
 #play{
