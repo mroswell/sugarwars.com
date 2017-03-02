@@ -73,16 +73,20 @@ $(document).ready(function(){
 	});
 
 	$("body").click(function(event){
+        debugger;
         if($(event.target).attr("class")!="settings" && $(event.target).parents(".callout").size()==0 && $(event.target).attr("class")!="callout"){
             $(".callout").hide();
+            if($(event.target).parents("#titles").size()==0 && $(".info").attr("sticky")=="yes"){
+                $(".info-close").trigger("click");
+            }
         }
 
-        if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
+        else if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
             $(".callout-about").hide();
         }
 
-        if($(event.target).attr("class")=="modal"){
-          $("#contactModal").hide();
+        else if($(event.target).attr("class")=="modal"){
+            $("#contactModal").hide();
         }
 
 	});
@@ -108,7 +112,7 @@ $(document).ready(function(){
 	});
 
 	$("#titles ol").mouseenter(function(){
-		if(localStorage.getItem("mouseHover")=="slow" && $(".info").attr("sticky")!="yes"){
+		if(localStorage.getItem("mouseHover")=="slow"){
 			applyScrollSpeed(10,-1);
 		}else{
 			$("#titlecontent").css("animation-play-state","paused");
@@ -116,22 +120,24 @@ $(document).ready(function(){
 	});
 
 	$("#titles ol").mouseleave(function(){
-		if($(".info").attr("sticky")!="yes"){
-      if(localStorage.getItem("mouseHover")=="slow"){
-        var scrollSpeed = localStorage.getItem("scrollSpeed");
-        applyScrollSpeed(parseInt(scrollSpeed),1);
-      }
-    }else{
-      $("#titlecontent").css("animation-play-state","paused");
-    }
+        if(localStorage.getItem("mouseHover")=="slow"){
+			var scrollSpeed = localStorage.getItem("scrollSpeed");
+			applyScrollSpeed(parseInt(scrollSpeed),1);
+		}else{
+            if($(".info").attr("sticky")!="yes"){
+                $("#titlecontent").css("animation-play-state","running");
+            }
+		}
 	});
 
 	$("#titles li").mouseover(function(){
 		//var pubMedId = "14522753";
+        //Don't change anything if the message is already sticky
+        if($(".info").attr("sticky")=="yes"){
+            return;
+        }
 		var pubMedId = $(this).attr("data-pmid");
-// debugger;
 		var url, linkText;
-
 		switch(pubMedId){
 			case "S0005789488800273":
 				url = "http://www.sciencedirect.com/science/article/pii/S0005789488800273";
@@ -145,8 +151,6 @@ $(document).ready(function(){
 				url = "https://www.ncbi.nlm.nih.gov/pubmed/"+pubMedId;
 				linkText = "PubMed";
 		}
-
-
 		var ref = DATA_JSON[pubMedId];
 		$(".info")
 		.show()
@@ -157,10 +161,16 @@ $(document).ready(function(){
 	});
 
 	$("#titles li").click(function(){
+        //Don't change any selection if already one is selected
+        if($(".info").attr("sticky")=="yes"){
+            return;
+        }
 		$(".info").attr("sticky","yes");
 		$("#titles li").css("border","2px solid black");
 		$(this).css("border","2px solid #ffff66");
-    $("#titlecontent").css("animation-play-state","paused");
+        if(localStorage.getItem("mouseHover")=="stop"){
+            $("#titlecontent").css("animation-play-state","paused");
+        }
 	});
 
 	$("#titles li").mouseout(function(){
@@ -172,9 +182,10 @@ $(document).ready(function(){
 
 	$(".info-close").click(function(){
 		$(".info").removeAttr("sticky").hide();
-    $("#titlecontent").css("animation-play-state","running");
-    var scrollSpeed = localStorage.getItem("scrollSpeed");
-    applyScrollSpeed(parseInt(scrollSpeed),1);
+        $("#titles li").css("border","2px solid black");
+        $("#titlecontent").css("animation-play-state","running");
+        var scrollSpeed = localStorage.getItem("scrollSpeed");
+        applyScrollSpeed(parseInt(scrollSpeed),1);
 	});
 
 	function applyScrollSpeed(scrollSpeed, delayCalculation){
