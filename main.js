@@ -1,16 +1,16 @@
 var player;
 function onYouTubeIframeAPIReady() {
-    player = new YT.Player('video-placeholder', {
-        width: 600,
-        height: 400,
-        videoId: 'EjMNNpIksaI',
-        playerVars: {
-            color: 'white'
-        },
-        events: {
-            onReady: play
-        }
-    });
+  player = new YT.Player('video-placeholder', {
+    width: 600,
+    height: 400,
+    videoId: 'EjMNNpIksaI',
+    playerVars: {
+        color: 'white'
+    },
+    events: {
+        onReady: play
+    }
+  });
 }
 
 function play(){
@@ -73,22 +73,20 @@ $(document).ready(function(){
 	});
 
 	$("body").click(function(event){
-        debugger;
-        if($(event.target).attr("class")!="settings" && $(event.target).parents(".callout").size()==0 && $(event.target).attr("class")!="callout"){
-            $(".callout").hide();
-            if($(event.target).parents("#titles").size()==0 && $(".info").attr("sticky")=="yes"){
-                $(".info-close").trigger("click");
-            }
-        }
+    if($(event.target).attr("class")!="settings" && $(event.target).parents(".callout").size()==0 && $(event.target).attr("class")!="callout"){
+      $(".callout").hide();
+      if($(event.target).parents("#titles").size()==0 && $(".info").attr("sticky")=="yes"){
+        $(".info-close").trigger("click");
+      }
+    }
 
-        else if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
-            $(".callout-about").hide();
-        }
+    else if($(event.target).attr("class")!="about" && $(event.target).parents(".callout-about").size()==0 && $(event.target).attr("class")!="callout-about") {
+      $(".callout-about").hide();
+    }
 
-        else if($(event.target).attr("class")=="modal"){
-            $("#contactModal").hide();
-        }
-
+    else if($(event.target).attr("class")=="modal"){
+      $("#contactModal").hide();
+    }
 	});
 
 	$(".speed-control#minus").click(function(){
@@ -120,57 +118,60 @@ $(document).ready(function(){
 	});
 
 	$("#titles ol").mouseleave(function(){
-        if(localStorage.getItem("mouseHover")=="slow"){
+    if(localStorage.getItem("mouseHover")=="slow"){
 			var scrollSpeed = localStorage.getItem("scrollSpeed");
 			applyScrollSpeed(parseInt(scrollSpeed),1);
 		}else{
-            if($(".info").attr("sticky")!="yes"){
-                $("#titlecontent").css("animation-play-state","running");
-            }
+      if($(".info").attr("sticky")!="yes"){
+        $("#titlecontent").css("animation-play-state","running");
+      }
 		}
 	});
 
 	$("#titles li").mouseover(function(){
-		//var pubMedId = "14522753";
-        //Don't change anything if the message is already sticky
-        if($(".info").attr("sticky")=="yes"){
-            return;
-        }
-		var pubMedId = $(this).attr("data-pmid");
-		var url, linkText;
-		switch(pubMedId){
-			case "S0005789488800273":
-				url = "http://www.sciencedirect.com/science/article/pii/S0005789488800273";
-				linkText = "Link";
-				break;
-			case "NCJ 092810":
-				url = "https://www.ncjrs.gov/App/publications/Abstract.aspx?id=92810";
-				linkText = "Link";
-				break;
-			default:
-				url = "https://www.ncbi.nlm.nih.gov/pubmed/"+pubMedId;
-				linkText = "PubMed";
-		}
-		var ref = DATA_JSON[pubMedId];
-		$(".info")
-		.show()
-		.find(".msg")
-		.html(ref.author+". ("+ref.pubdate+"). "+ref.title+" "+ref.source+", "+ref.volume+"("+ref.issue+"), "+ref.pages+"<br/><a target='_blank' href='"+url+"'>"+linkText+"</a>");
-		$("#titles li").css("border","2px solid black");
+    //Don't change anything if the message is already sticky
+    if($(".info").attr("sticky")=="yes"){
+      return;
+    }
+		changeInfoText(this);
+    $("#titles li").css("border","2px solid black");
 		$(this).css("border","2px solid #ffff66");
 	});
 
+  function changeInfoText(self){
+    var pubMedId = $(self).attr("data-pmid");
+    var url, linkText;
+    switch(pubMedId){
+      case "S0005789488800273":
+        url = "http://www.sciencedirect.com/science/article/pii/S0005789488800273";
+        linkText = "Link";
+        break;
+      case "NCJ 092810":
+        url = "https://www.ncjrs.gov/App/publications/Abstract.aspx?id=92810";
+        linkText = "Link";
+        break;
+      default:
+        url = "https://www.ncbi.nlm.nih.gov/pubmed/"+pubMedId;
+        linkText = "PubMed";
+    }
+    var ref = DATA_JSON[pubMedId];
+    $(".info")
+    .show()
+    .find(".msg")
+    .html(ref.author+". ("+ref.pubdate+"). "+ref.title+" "+ref.source+", "+ref.volume+"("+ref.issue+"), "+ref.pages+"<br/><a target='_blank' href='"+url+"'>"+linkText+"</a>");
+  }
+
 	$("#titles li").click(function(){
-        //Don't change any selection if already one is selected
-        if($(".info").attr("sticky")=="yes"){
-            return;
-        }
+    //Change the info text even when the info is sticky
+    if($(".info").attr("sticky")=="yes"){
+      changeInfoText(this);
+    }
 		$(".info").attr("sticky","yes");
 		$("#titles li").css("border","2px solid black");
 		$(this).css("border","2px solid #ffff66");
-        if(localStorage.getItem("mouseHover")=="stop"){
-            $("#titlecontent").css("animation-play-state","paused");
-        }
+    if(localStorage.getItem("mouseHover")=="stop"){
+      $("#titlecontent").css("animation-play-state","paused");
+    }
 	});
 
 	$("#titles li").mouseout(function(){
@@ -182,10 +183,10 @@ $(document).ready(function(){
 
 	$(".info-close").click(function(){
 		$(".info").removeAttr("sticky").hide();
-        $("#titles li").css("border","2px solid black");
-        $("#titlecontent").css("animation-play-state","running");
-        var scrollSpeed = localStorage.getItem("scrollSpeed");
-        applyScrollSpeed(parseInt(scrollSpeed),1);
+    $("#titles li").css("border","2px solid black");
+    $("#titlecontent").css("animation-play-state","running");
+    var scrollSpeed = localStorage.getItem("scrollSpeed");
+    applyScrollSpeed(parseInt(scrollSpeed),1);
 	});
 
 	function applyScrollSpeed(scrollSpeed, delayCalculation){
@@ -207,8 +208,8 @@ $(document).ready(function(){
 		}else{
 			$("#titlecontent").css("animation-play-state","paused");
 			var elem = document.getElementById("titlecontent");
-		    var actualTop = parseFloat(window.getComputedStyle(elem,null).getPropertyValue("top").replace("px",""));
-		    $("#titlecontent").css("animation-duration",(scrollSpeed*86)+"s");
+		  var actualTop = parseFloat(window.getComputedStyle(elem,null).getPropertyValue("top").replace("px",""));
+		  $("#titlecontent").css("animation-duration",(scrollSpeed*86)+"s");
 			$(".logo-text").css("animation-duration", scrollSpeed+"s");
 			var computedTop = parseFloat(window.getComputedStyle(elem,null).getPropertyValue("top").replace("px",""));
 
