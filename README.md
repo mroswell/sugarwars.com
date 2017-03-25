@@ -1,6 +1,6 @@
 # sugar-wars-scroll
 
-https://mroswell.github.io/sugarwars.com
+http://sugarwars.com
 
 Star Wars Theme:
 https://www.youtube.com/watch?v=_D0ZQPqeJkk
