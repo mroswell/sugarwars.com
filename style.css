@@ -40,6 +40,10 @@ p#start
 	animation: intro 2s ease-out;
 }
 
+#introtext {
+    font-size: 82%;
+}
+
 @-webkit-keyframes intro {
 	0% { opacity: 1; }
 	90% { opacity: 1; }
