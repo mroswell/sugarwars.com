@@ -553,24 +553,47 @@ label.css-label {
 }
 
 /* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
+@media only screen and (max-width : 480px) {
 	.modal-content{
-		width: 85%;
+		width: 300px;
 	}
+    #titles {
+        width: 400px;
+        left: 150px;
+        font-size: 18px;
+    }
+    p#start {
+        width: 180px !important;
+        margin: 55px auto !important;
+        font-size: 22px !important;
+    }
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+@media only screen and (max-width : 768px) {
 	.modal-content{
-		width: 60%;
+		width: 90%;
 	}
+    #titles {
+        width: 100%;
+        left: 10%;
+        font-size: 32px;
+    }
 }
 
 /* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
+@media only screen and (max-width : 992px) {
 	.modal-content{
-		width: 40%;
+		width: 95%;
 	}
+    #titles {
+        width: 100%;
+        left: 275px;
+        font-size: 30px;
+    }
+    h1 {
+        font-size: 110px;
+    }
 }
 
 /* Large Devices, Wide Screens */
